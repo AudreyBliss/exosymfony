@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Coordonnees list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Email</th>
+                <th>Adresse</th>
+                <th>Telephone</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for coordonnee in coordonnees %}
+            <tr>
+                <td><a href="{{ path('prefix_new_show', { 'id': coordonnee.id }) }}">{{ coordonnee.id }}</a></td>
+                <td>{{ coordonnee.nom }}</td>
+                <td>{{ coordonnee.prenom }}</td>
+                <td>{{ coordonnee.email }}</td>
+                <td>{{ coordonnee.adresse }}</td>
+                <td>{{ coordonnee.telephone }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('prefix_new_show', { 'id': coordonnee.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('prefix_new_edit', { 'id': coordonnee.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('prefix_new_new') }}">Create a new coordonnee</a>
+        </li>
+    </ul>
+{% endblock %}

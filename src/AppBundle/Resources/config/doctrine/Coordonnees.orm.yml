@@ -1,0 +1,26 @@
+AppBundle\Entity\Coordonnees:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\CoordonneesRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nom:
+            type: string
+            length: 255
+        prenom:
+            type: string
+            length: 255
+        email:
+            type: string
+            length: 255
+        adresse:
+            type: text
+        telephone:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }
